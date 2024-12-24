@@ -21,8 +21,12 @@ RUN adduser --disabled-password --gecos "" simon && \
     echo "simon:simon" | chpasswd && \
     adduser simon sudo
 
+# Set permissions for the /app directory
+RUN mkdir -p /app && chown simon:simon /app
+
+# Switch to the non-root user
 USER simon
 
-# Set the working directory (optional, for your application)
-WORKDIR /home/simon
+WORKDIR /app
+
 
