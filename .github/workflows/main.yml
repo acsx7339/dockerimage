@@ -25,10 +25,11 @@ jobs:
       - name: List files for debugging
         run: ls -R
 
-      # Step 3: Build and push the Docker image
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v5
         with:
-          context: ./Dockerfile
+          context: . # Context is the root directory
+          file: ./Dockerfile # Specify the path to the Dockerfile
           push: true
           tags: acsx7339/stock:latest
+
