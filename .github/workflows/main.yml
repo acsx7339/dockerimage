@@ -26,6 +26,6 @@ jobs:
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./Dockerfile
           push: true
           tags: acsx7339/stock:latest
